@@ -62,21 +62,20 @@ nav ul li a:hover {
     text-shadow: 2px 2px 15px rgb(255, 183, 0);
 }
 
-nav .dropdown-menu {
+nav ul ul {
     background-color: rgb(0, 0, 0, 0.5);
     position: absolute;
     text-align: left;
     display: none;
 }
-
+nav ul ul li {
+    width: 100%;
+}
 nav ul li:hover
-    .dropdown-menu {
+    ul {
         display: block;
 }
 
-nav .dropdown-menu li {
-    width: 100%;
-}
 .current-page {
     text-shadow: 2px 2px 15px rgb(255, 183, 0);
     font-size: larger;
