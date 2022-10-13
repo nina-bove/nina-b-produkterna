@@ -1,8 +1,8 @@
-* {
+* { /*Jag använder stjärnan för att få bort margin och padding som finns med som standard*/
     padding: 0;
     margin: 0;
 }
-body {
+body { /*Påverkar alla element inom body-elementet*/
     margin: 0;
     padding: 0;
     display: flex;
@@ -13,7 +13,12 @@ body {
     color: goldenrod;
 }
 
-.navbar {
+a {/* Detta ändrar uteeendet på alla a-element aka länkar*/
+    text-decoration: none;
+    color: goldenrod;
+}
+
+.navbar {/*Utseende, storlek, position av navbaren och position av element inom navbaren */
     background-color: rgba(0, 0, 0);
     box-shadow: 1px 1px 5px rgb(218, 165, 32);
     padding: 0;
@@ -27,26 +32,31 @@ body {
     align-items: center;
 }
 
-.logo {
-    width: 60px;
-    height: 60px;
+.logo { /*Storlek och form på logan som finns inom navbaren längst upp på sidan*/
     margin-left: 50px;
+    padding: 0;
+    width: 60px;
+    border-radius: 50%;
+}
+.logo:hover {/*Effekt på logan när man pekar på den med musen*/
+    box-shadow: 1px 1px 10px rgb(218, 165, 32);
 }
 
-nav {
+nav {/*Påverkar allt som finns inom <nav> taggen och finns nestad inom navbaren. <nav> i sig är ett "parent"-element med flera "child"-element 
+    som i mitt fall är listor*/
     width: 100%;
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
 }
-nav ul {
+nav ul { /*Här ändras utseendet på alla listor inom nav-elementet*/
     margin-right: 50px;
+    display: flex;
+    align-items: center;
     list-style-type: none;
 }
-
-nav ul li {
+nav ul li { /*Här ändras positionen på de individuella punkterna inom listorna i nav*/
     position: relative;
     display: inline-block;
     font-size: 16px;
@@ -55,46 +65,40 @@ nav ul li a {
     display: block;
     padding: 15px;
     color: goldenrod;
-    text-decoration: none;
 }
 
 nav ul li a:hover {
-    text-shadow: 2px 2px 15px rgb(255, 183, 0);
+    text-shadow: 2px 2px 5px rgb(255, 183, 0);
 }
 
-nav ul ul {
+nav ul ul { /* Inom nav finns listor med länkar till varje sida. Under varje punkt/länk i denna lista finns ytterliggare listor nestade. 
+   position: absolute gör att dessa listor är exakt plaserade under sina "parent"-listpunkter. display: none gör dessa listor osynliga 
+   som standard.*/
     background-color: rgb(0, 0, 0, 0.5);
     position: absolute;
     text-align: left;
     display: none;
 }
-nav ul ul li {
+nav ul ul li { /*Varje punkt inom sublistan tar upp 100% av sin bredd*/
     width: 100%;
 }
-nav ul li:hover
+nav ul li:hover /*När man pekar på de olika punkterna i listorna inom nav-elementet syns dropdown-menu under varje punkt*/
     ul {
         display: block;
 }
 
 .current-page {
-    text-shadow: 2px 2px 15px rgb(255, 183, 0);
+    text-shadow: 2px 2px 5px rgb(255, 183, 0);
     font-size: larger;
 }
 
-.bag-icon {
-    width: 40px;
-    height: 40px;
-}
-
-.bag-icon:hover {
-    box-shadow: 1px 1px 10px rgb(255, 212, 105);
-}
 
 .banner {
     padding: 50px;
     margin-top: 80px;
     background: radial-gradient(rgb(218, 165, 32, 0.4),rgb(0,0,0));
     color: rgb(193, 139, 2);
+    box-shadow: 1px 1px 5px rgb(218, 165, 32);
 }
 
 .banner h1 {
@@ -102,6 +106,7 @@ nav ul li:hover
     display: flex;
     justify-content: center;
     align-items: center;
+    text-shadow: 2px 2px 3px rgb(0, 0, 0), 2px 2px 10px rgb(255, 183, 0);
 }
 
 
@@ -111,7 +116,7 @@ nav ul li:hover
     align-items: flex-end;
 }
 
-button {
+button {/*Ändrar utseende på knappar*/
     background: transparent;
     font-family: 'Cinzel', serif;
     font-size: 16px;
@@ -120,39 +125,100 @@ button {
     border: 1px solid goldenrod;
     text-decoration: none;
     cursor: pointer;
+    text-align: center;
+    
 }
 
-button:hover {
-    text-shadow: 2px 2px 15px rgb(255, 183, 32);
+button:hover {/*Effekt/skugga syns under knappen när man pekar på den*/
+    text-shadow: 2px 2px 5px rgb(255, 183, 0);
     box-shadow: 1px 1px 10px rgb(218, 165, 32);
 }
-.container {
-    width: 90%;
+.container {/*Inom denna har jag flera andra element.*/
+    width: 100%;
     margin: auto;
-    background-color: rgb(0, 255, 255, 0.2);
+    /* background-color: rgb(0, 255, 255, 0.2); */
     display: flex;
+    justify-content: space-around;
 }
-a {
-    text-decoration: none;
+
+.side-nav {
+    padding: 40px;
+    left: 0;
+    box-shadow: 1px 1px 5px rgb(218, 165, 32);
+    overflow-x: hidden;
+}
+
+.side-nav ul {
+    list-style-type: none;
+}
+
+.side-nav ul li {
+    line-height: 40px;
+
+}
+.side-nav ul li:hover {
+    text-shadow: 2px 2px 5px rgb(255, 183, 0);
+}
+
+.column-left, .column-right {
+    width: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+.column-left {
+    margin: 10px 0 10px 10px;
+    background-color: brown;
+}
+.column-right {
+    margin: 10px 10px 10px 0;
+    background-color: green;
 }
 
 .products {
-    background-color: rgb(255, 255, 255);
-    margin: 30px;
-    padding: 0;
+    /* background-color: rgb(255, 255, 255); */
+    width:  100%;
+    margin: 50px 30px;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
-.product-item {
-    margin: 10px;
+
+.item {
     background-color: black;
-    box-shadow: 1px 1px 10px rgb(218, 165, 32);
+    padding: 10px;
+    margin: 1% 0;
 }
 
-.product-item img {
+.item:hover {
+    box-shadow: 1px 1px 10px rgb(218, 165, 32);
+    transition: 0.3s;
+}
+.item img {
     width: 250px;
     max-width: 250px;
     height: 300px;
-    padding: 10px;
 }
+.shopping-cart {
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.shopping-cart:hover {
+    box-shadow: 1px 1px 10px rgb(255, 212, 105);
+}
+
+.liked-items {
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.liked-items:hover {
+    box-shadow: 1px 1px 10px rgb(255, 212, 105);
+}
+
