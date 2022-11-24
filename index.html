@@ -1,144 +1,146 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <title>Yggdrasil | Home</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
-</head>
-
-<body>
-    <div class="navbar">
-        <a href="index.html">
-            <img src="img/yggdrasil-logo.png" class="logo">
-        </a>
-        <nav>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="utf-8">
+      <!--Gör det möjligt att använda tecken som å, ä, ö-->
+      <title>Yggdrasil | Home</title>
+      <!--Titeln på sidan. Syns på fliken-->
+      <link rel="stylesheet" href="css/style.css">
+      <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+      <!--Importera en font-->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+      <!--Importera javascript för slideshow-->
+   </head>
+   <body>
+      <div class="navbar">
+         <!--Här börjar navbaren-->
+         <a href="index.html">
+         <img src="img/yggdrasil-logo.png" class="logo">
+         </a>
+         <nav>
             <ul>
-                <li><a href="index.html" class="current-page">Home</a>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Home</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="products.html">Products</a>
-                    <ul>
-                        <li><a href="#">What's new</a></li>
-                        <li><a href="#">See all</a></li>
-                        <li><a href="#">Weapons</a></li>
-                        <li><a href="#">Equipment</a></li>
-                        <li><a href="#">Others</a></li>
-                        <li><a href="#">Sale</a></li>
-                    </ul>
-                </li>
-                    
-                <li><a href="about.html">About</a>
-                    <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="documentation.html">Documentation</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="contacts.html">Contact</a>
-                    <ul>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <img src="img/bag.png" class="shopping-cart">
-                    </a>
-                </li>
+               <!--En lista med länkar som leder till olika sidor, och syns på en rad i navbaren-->
+               <li>
+                  <a href="index.html" class="current-page">Home</a><!--Under varje list punkt finns en egen lista som syns när man pekar på list-punkten ovanför-->
+                  <ul>
+                     <li><a href="#">Home</a></li>
+                     <li><a href="#">Home</a></li>
+                     <li><a href="#">Home</a></li>
+                  </ul>
+               </li>
+               <li>
+                  <a href="products.html">Products</a>
+                  <ul>
+                     <li><a href="#">What's new</a></li>
+                     <li><a href="#">See all</a></li>
+                     <li><a href="#">Weapons</a></li>
+                     <li><a href="#">Equipment</a></li>
+                     <li><a href="#">Others</a></li>
+                     <li><a href="#">Sale</a></li>
+                  </ul>
+               </li>
+               <li>
+                  <a href="about.html">About</a>
+                  <ul>
+                     <li><a href="#">About</a></li>
+                     <li><a href="#">About</a></li>
+                     <li><a href="documentation.html">Documentation</a></li>
+                     <!--Alla länkar i sublistorna är döda utom denna-->
+                  </ul>
+               </li>
+               <li>
+                  <a href="contacts.html">Contact</a>
+                  <ul>
+                     <li><a href="#">Contact</a></li>
+                     <li><a href="#">Contact</a></li>
+                  </ul>
+               </li>
+               <li>
+                  <a href="#">
+                  <img src="img/bag.png" class="shopping-cart">
+                  </a>
+               </li>
             </ul>
-        </nav>
-    </div>
-
-    <div class="banner">
-        <h1>Yggdrasil</h1>
-        <h2>Quality goods from all nine realms</h2>
-        <a href="products.html">
-            <button type=button>Explore now&#8594;</button>
-        </a>
-    </div>
-
-
-    <div></div>
-    <div class="container">
-        <div class="popular-products">
+         </nav>
+      </div>
+      <!--Här slutar navbaren-->
+      <div class="banner">
+         <h1>Yggdrasil</h1>
+         <h2>Quality goods from all nine realms</h2>
+         <a href="products.html">
+            <button type=button>Explore now&#8594;</button><!--En knapp som tar dig till products-sidan-->
+         </a>
+      </div>
+      <div></div>
+      <div class="container">
+         <div class="popular-products">
+            <!--Slideshow 1 visar nya produkter-->
             <h2>New products</h2>
             <div class="swiper">
-                <div class="swiper-wrapper">
+               <div class="swiper-wrapper">
+                  <!--En wrapper med alla slides i slideshowen-->
                   <div class="swiper-slide"><img src="img/jade-axe-slideshow.jpg"></div>
+                  <!--Varje slide har en bild och klassen swipper-slide-->
                   <div class="swiper-slide"><img src="img/aegis-slideshow.jpg"></div>
                   <div class="swiper-slide"><img src="img/helmet-slideshow.jpg"></div>
                   <div class="swiper-slide"><img src="img/skull-shield-slideshow.jpg"></div>
-                </div>
-    
-                <div class="swiper-pagination"></div>
-    
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+               </div>
+               <div class="swiper-pagination"></div>
+               <!--Vilken slide eller "page" man är på-->
+               <div class="swiper-button-prev"></div>
+               <!--Knappar som låter dig bläddra fram och tillbaks genom bilderna-->
+               <div class="swiper-button-next"></div>
             </div>
-        </div>
-        <div>
+         </div>
+         <div class="sale-text">
             <h1>Up to 50% sale</h1>
-        </div>
-        <div class="popular-products">
+            <!--Text soom finns mellan de 2 slideshowsen för det såg tomt ut-->
+         </div>
+         <div class="popular-products">
+            <!--Slideshow 2. De gör exakt samma sak så de har samma klasser-->
             <h2>Popular products</h2>
             <div class="swiper">
-                <div class="swiper-wrapper">
+               <div class="swiper-wrapper">
                   <div class="swiper-slide"><img src="img/aegis-slideshow.jpg"></div>
                   <div class="swiper-slide"><img src="img/black-flail-slideshow.jpg"></div>
                   <div class="swiper-slide"><img src="img/gold-bow-slideshow.jpg"></div>
                   <div class="swiper-slide"><img src="img/dyson-sphere-slideshow.jpg"></div>
-                </div>
-    
-                <div class="swiper-pagination"></div>
-    
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+               </div>
+               <div class="swiper-pagination"></div>
+               <div class="swiper-button-prev"></div>
+               <div class="swiper-button-next"></div>
             </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>About this website</p>
-        <a href="documentation.html">
-            <button type=button>Documentation &#8594;</button>
-        </a>
-    </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-
-<script>
-    const swiper = new Swiper('.swiper', {
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-        },
-        
-    loop: true,
-
-    pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-
-    navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-
-});
-</script>
-
-</body>
+         </div>
+      </div>
+      <footer>
+         <!--Footer finns alltid längst ner på sidan. Knapp tar dig till dokumentation-sidan-->
+         <p>About this website</p>
+         <a href="documentation.html">
+         <button type=button>Documentation &#8594;</button>
+         </a>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script><!--Java script source-->
+      <script>/*Java script*/
+         const swiper = new Swiper('.swiper', {
+             autoplay: {/*Spelar av sig själv*/
+                 delay: 3000,/*3000 millisekunder = 3 sekunder. Det tar 3 sekunder mellan slidsen*/
+                 disableOnInteraction: false,/*Den slutar inte att fungera vid interaktion*/
+             },
+             
+         loop: true,/*Den loopar dvs börjar om från början när den har nåt sista bilden*/
+         
+         pagination: {
+         el: '.swiper-pagination',
+         clickable: true,/*Prickarna under bilderna som visar vilken slide man är på går att klicka och navigera med*/
+         },
+         
+         navigation: {/*Man kan använda knapparna för att "navigera" sig genom slideshowen*/
+         nextEl: '.swiper-button-next',/*Man kommer till nästa slide genom att klicka knappen som heter "swiper-button-next"*/
+         prevEl: '.swiper-button-prev',/*Man kan gå tillbaka till föregående slide genom att klicka knappen som heter "swiper-button-prev"*/
+         },
+         
+         });
+      </script>
+   </body>
 </html>
-
-

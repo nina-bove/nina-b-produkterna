@@ -1,296 +1,339 @@
-
-* { /*Jag använder stjärnan för att få bort margin och padding som finns med som standard*/
-    padding: 0;
-    margin: 0;
+* {
+	/*Jag använder stjärnan för att få bort margin och padding som finns med som standard*/
+	padding: 0;
+	margin: 0;
 }
 
-body { /*Påverkar alla element inom body-elementet*/
-    display: flex;
-    width: 100%;
-    flex-flow: row wrap;
-    justify-content: center;
-    background-color: rgb(0, 0, 0);
-    color: goldenrod;
-    font-family: 'Cinzel', serif;
+body {
+	/*Påverkar hur alla element inom body-elementet ser ut och är placerade*/
+	display: flex;
+	width: 100%;
+	flex-flow: row wrap;
+	justify-content: center;
+	background-color: rgb(0, 0, 0);
+	color: goldenrod;
+	font-family: 'Cinzel', serif;
 
 }
 
-a {/* Detta ändrar uteeendet på alla a-element aka länkar*/
-    text-decoration: none;
-    color: goldenrod;
+a {
+	/* Detta ändrar uteeendet på alla a-element aka länkar*/
+	text-decoration: none;
+	color: goldenrod;
 }
 
-.navbar {/*Denna klass ändrar storlek, position av navbaren och position av element inom navbaren */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;background-color: rgba(0, 0, 0);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: 80px;
-    box-shadow: 1px 1px 5px rgb(218, 165, 32);
+.navbar {
+	/*Denna klass ändrar storlek, position av navbaren och position av element inom navbaren */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: rgba(0, 0, 0);
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 80px;
+	box-shadow: 1px 1px 5px rgb(218, 165, 32);
 }
 
-.logo { /*Storlek och form på logan som finns inom navbaren längst upp på sidan*/
-    margin-left: 50px;
-    width: 60px;
-    border-radius: 50%;
-}
-.logo:hover {/*Effekt på logan när man pekar på den med musen*/
-    box-shadow: 1px 1px 10px rgb(255, 212, 105);
+.logo {
+	margin-left: 50px;
+	width: 60px;
+	border-radius: 50%;
 }
 
-/* Nedan står kod för navbaren. På vissa ställen har jag använt display:none, display:inline-block och display:block istället för flexbox för att det var nödvändigt eftersom flexbox inte har dessa egenskaper*/
+.logo:hover {
+	box-shadow: 1px 1px 10px rgb(255, 212, 105);
+}
 
-nav {/*Påverkar allt som finns inom <nav> taggen och finns nestad inom navbaren. <nav> i sig är ett "parent"-element med flera "child"-element 
-    som i mitt fall är listor. */
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: flex-end;
+/* Nedan står kod för navbaren. På vissa ställen har jag använt display:none, display:inline-block och display:block istället för flexbox 
+för att det var nödvändigt eftersom flexbox inte har dessa egenskaper*/
+
+nav {
+	/*Påverkar allt som finns inom <nav> taggen och finns nestad inom navbaren. <nav> i sig är ett "parent"-element med flera 
+    "child"-element som i mitt fall är listor */
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	justify-content: flex-end;
 }
-nav ul { /*Här ändras utseendet på alla listor inom nav-elementet*/
-    margin-right: 50px;
-    display: flex;
-    align-items: center;
+
+nav ul {
+	margin-right: 50px;
+	display: flex;
+	align-items: center;
 }
-nav ul li { /*Här ändras positionen på de individuella punkterna inom listorna i nav*/
-    position: relative;
-    display: inline-block;
-    font-size: 16px;
+
+nav ul li {
+	position: relative;
+	display: inline-block;
+	font-size: 16px;
 }
+
 nav ul li a {
-    display: block;
-    padding: 15px;
-    color: goldenrod;
+	display: block;
+	padding: 15px;
+	color: goldenrod;
 }
 
 nav ul li a:hover {
-    text-shadow: 2px 2px 5px rgb(255, 183, 0);
+	text-shadow: 2px 2px 5px rgb(255, 183, 0);
 }
 
-nav ul ul { /* Inom nav finns listor med länkar till varje sida. Under varje punkt/länk i denna lista finns ytterliggare listor nestade. 
-   position: absolute gör att dessa listor är exakt plaserade under sina "parent"-listpunkter. display: none gör dessa listor osynliga som standard.*/
-    background-color: rgb(0, 0, 0, 0.75);
-    position: absolute;
-    text-align: left;
-    display: none;
+nav ul ul {
+	/* Inom nav finns listor med länkar till varje sida. Under varje punkt/länk i denna lista finns ytterliggare listor nestade. 
+   position: absolute gör att dessa listor är placerade exakt under sina "parent"-listpunkter. display: none gör dessa listor osynliga 
+   som standard.*/
+	background-color: rgb(0, 0, 0, 0.75);
+	position: absolute;
+	text-align: left;
+	display: none;
 }
-nav ul ul li { /*Varje punkt inom sublistan tar upp 100% av sin bredd*/
-    width: 100%;
+
+nav ul ul li {
+	/*Varje punkt inom sublistan tar upp 100% av sin bredd*/
+	width: 100%;
 }
-nav ul li:hover /*När man pekar på de olika punkterna i listorna inom nav-elementet syns dropdown-menu under varje punkt. 
-display:block visar elementet som block och börjar på en ny rad och tar upp full bredd*/
-    ul {
-        display: block;
+
+nav ul li:hover
+
+/*När man pekar på de olika punkterna i listorna inom nav-elementet syns dropdown-menu under varje punkt. 
+display:block visar elementet som block, börjar på en ny rad och tar upp full bredd*/
+ul {
+	display: block;
 }
 
 .current-page {
-    text-shadow: 2px 2px 5px rgb(255, 183, 0);
-    font-size: larger;
+	text-shadow: 2px 2px 5px rgb(255, 183, 0);
+	font-size: larger;
 }
 
 .banner {
-    width: 100%;
-    height: 300px;
-    margin-top: 60px;/*60px avstånd från toppen av sidan eftersom det är där navbaren är*/
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: rgb(193, 139, 2);
-    box-shadow: 1px 1px 5px rgb(218, 165, 32); 
-    text-shadow: 2px 2px 3px rgb(0, 0, 0), 2px 2px 10px rgb(255, 183, 0);
+	width: 100%;
+	height: 300px;
+	margin-top: 60px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: rgb(193, 139, 2);
+	box-shadow: 1px 1px 5px rgb(218, 165, 32);
+	text-shadow: 2px 2px 3px rgb(0, 0, 0), 2px 2px 10px rgb(255, 183, 0);
 }
 
 .products-banner {
-    width: 100%;
-    height: 300px;
-    margin-top: 60px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 1px 1px 5px rgb(218, 165, 32); 
-    text-shadow: 2px 2px 3px rgb(0, 0, 0), 2px 2px 10px rgb(255, 183, 0);
+	/*Bannern på just products-sidan ser annorlunda ut än de andra sidorna så den har sin egen klass*/
+	width: 100%;
+	height: 300px;
+	margin-top: 60px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 1px 1px 5px rgb(218, 165, 32);
+	text-shadow: 2px 2px 3px rgb(0, 0, 0), 2px 2px 10px rgb(255, 183, 0);
 }
 
 .products-banner img {
-    max-height: 300px;
+	max-height: 300px;
 }
 
 .products-banner h1 {
-    margin: 0 200px;
-    color: rgb(225, 210, 170);
+	margin: 0 200px;
+	color: rgb(225, 210, 170);
 }
+
 .products-banner p {
-    margin: 0 200px;
+	margin: 0 200px;
 }
 
-button {/*Ändrar utseendet på knappar*/
-    background: transparent;
-    font-family: 'Cinzel', serif;
-    font-size: 16px;
-    color: goldenrod;
-    padding: 10px 15px;
-    border: 1px solid goldenrod;
-    text-decoration: none;
-    cursor: pointer;
-    text-align: center;
+.sale-text {
+	color: rgb(225, 210, 170);
+	text-shadow: 2px 2px 3px rgb(0, 0, 0), 2px 2px 10px rgb(255, 183, 0);
 }
 
-button:hover {/*Effekt/skugga syns under knappen när man pekar på den*/
-    text-shadow: 2px 2px 5px rgb(255, 183, 0);
-    box-shadow: 1px 1px 10px rgb(218, 165, 32);
-    background: -moz-radial-gradient(goldenrod, black);
+button {
+	/*Ändrar utseendet på alla knappar*/
+	background: transparent;
+	font-family: 'Cinzel', serif;
+	font-size: 16px;
+	color: goldenrod;
+	padding: 10px 15px;
+	border: 1px solid goldenrod;
+	text-decoration: none;
+	cursor: pointer;
+	text-align: center;
 }
 
-.container {/*Inom denna har jag flera andra element.*/
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+button:hover {
+	/*Effekt/skugga syns under knappen när man pekar på den*/
+	text-shadow: 2px 2px 5px rgb(255, 183, 0);
+	box-shadow: 1px 1px 10px rgb(218, 165, 32);
+	background: -moz-radial-gradient(goldenrod, black);
+}
+
+.container {
+	/*Inom denna har jag flera andra element.*/
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .side-nav {
-    width: 200px;
-    height: 100%;
-    left: 0;
-    padding-top: 30px;
-    margin-top: 30px;
-    border-right: goldenrod solid 1px;
-    overflow-x: hidden;
-    display: flex;
-    justify-content: center;
+	width: 200px;
+	height: 100%;
+	left: 0;
+	padding-top: 30px;
+	margin-top: 30px;
+	border-right: goldenrod solid 1px;
+	/*En kant på höger sida för att markera mellan sidnav och alla produkter*/
+	overflow-x: hidden;
+	display: flex;
+	justify-content: center;
 }
 
 .side-nav ul {
-    list-style-type: none;
+	list-style-type: none;
 }
 
-.side-nav ul li {/*Mellanrum mellan raderna på punkterna i listan*/
-    line-height: 30px;
-}
-.side-nav ul li:hover {/*Effekt på listpunkter när man pekar på de*/
-    text-shadow: 2px 2px 5px rgb(255, 183, 0);
+.side-nav ul li {
+	/*Mellanrum mellan raderna på punkterna i listan*/
+	line-height: 30px;
 }
 
-.column-left, .column-right {/*Två "sub-containers" inom container-elementet så att jag kan placera saker hur som helst på två sidor av sidan*/
-    width: 50%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+.side-nav ul li:hover {
+	text-shadow: 2px 2px 5px rgb(255, 183, 0);
+}
+
+.column-left,
+.column-right {
+	/*Två "sub-containers" inom container-elementet så att jag kan placera saker hur som helst på två sidor av sidan*/
+	width: 50%;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
 }
 
 .column-left {
-    margin: 10px 0 10px 10px;
+	margin: 10px 0 10px 10px;
 }
 
 .column-right {
-    margin: 10px 10px 10px 0;
+	margin: 10px 10px 10px 0;
 }
 
+.column-right h3 {
+	margin-top: 1em;
+}
+
+
 .products {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+	/*Inom detta elementet finns flera items, denna klass beskriver hur dessa items ska placeras inom elementet*/
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
 }
 
 .item {
-    padding: 10px;
-    margin: 15px 0;
-    width: 250px;
-    height: 330px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+	/*Dessa items består också av delar som bilder och olika textrader under den. Denna klassen för klarar hur delarna är placerade*/
+	padding: 10px;
+	margin: 15px 0;
+	width: 250px;
+	height: 330px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .item:hover {
-    box-shadow: 1px 1px 15px rgb(218, 165, 32);
-    transition: 0.5s ease;
-    cursor: pointer;
+	box-shadow: 1px 1px 15px rgb(218, 165, 32);
+	transition: 0.5s ease;
+	cursor: pointer;
 }
+
 .item img {
-    width: auto;
-    height: auto;
-    max-width: 200px;
-    max-height: 230px;
-    align-self: center;
+	width: auto;
+	height: auto;
+	max-width: 200px;
+	max-height: 230px;
+	align-self: center;
 }
+
 .shopping-cart {
-    width: 40px;
-    height: auto;
-    border-radius: 50%;
+	width: 40px;
+	height: auto;
+	border-radius: 50%;
 }
 
 .shopping-cart:hover {
-    box-shadow: 1px 1px 10px rgb(255, 212, 105);
+	box-shadow: 1px 1px 10px rgb(255, 212, 105);
 }
 
 .popular-products {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
 }
 
 
 h1 {
-    font-size: 50px;
+	font-size: 50px;
 }
 
 h3 {
-    font-size: 25px;;
+	font-size: 25px;
+	;
 }
 
 h4 {
-    font-size: 18px;
+	font-size: 18px;
 }
 
 p {
-    font-size: 20px;
+	font-size: 20px;
 }
 
-h2, p {
-    margin-bottom: 1em;
+h2,
+p {
+	margin-bottom: 1em;
 }
 
 .swiper {
-    width: 80%;
-    height: fit-content;
+	/*Min swiper eller slideshow är 80% så bred som parent-elementet som den är nestad i*/
+	width: 80%;
+	height: fit-content;
 }
 
 .swiper-slide img {
-    width: 100%;
+	width: 100%;
 }
 
-.swiper .swiper-button-prev, .swiper .swiper-button-next {
-    color: rgb(175, 126, 5);
+.swiper .swiper-button-prev,
+.swiper .swiper-button-next {
+	/*Ändrar färg på knapparna*/
+	color: rgb(175, 126, 5);
 }
 
 .swiper .swiper-pagination-bullet-active {
-    background: rgb(175, 126, 5);
+	/*Ändrar färg på prickarna under bilden*/
+	background: rgb(175, 126, 5);
 }
-
-.column-right h3 {
-    margin-top: 1em;
-}
-
 
 footer {
-    background-color: black;
-    width: 100%;
-    padding: 10px;
-    border-top: goldenrod solid 2px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    bottom: 0;
+	/*Påverkar footer som finns längst ner på sidan*/
+	background-color: black;
+	width: 100%;
+	padding: 10px;
+	border-top: goldenrod solid 2px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	bottom: 0;
 }
